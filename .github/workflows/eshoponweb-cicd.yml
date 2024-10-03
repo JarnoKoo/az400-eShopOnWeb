@@ -11,7 +11,6 @@ env:
   SUBSCRIPTION-ID: 1ff2dc37-7437-4d1b-b8b2-67a404bbc677
   WEBAPP-NAME: eshoponweb-webapp-universe
 
-
 jobs:
   #Build, test and publish .net web project in repository
   buildandtest:
@@ -102,4 +101,4 @@ jobs:
       uses: Azure/cli@v2
       with:
         inlineScript: |
-             az webapp deploy --name ${{ env.WEBAPP-NAME }} --resource-group ${{ env.RESOURCE-GROUP }} --src-path .net-app/app.zip --type zip
+             az webapp deploy --name ${{ env.WEBAPP-NAME }} --resource-group ${{ env.RESOURCE-GROUP }} --src-path .net-app/app.zip --type zip --timeout 600 
